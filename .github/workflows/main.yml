@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '^1.17'
       - run: go test github.com/mac2000/govatar/grav
   build:
     needs: [ test ]
@@ -36,6 +39,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '^1.17'
       - run: go build -o ${{ matrix.output }}
         env:
           GOOS: ${{ matrix.goos }}
