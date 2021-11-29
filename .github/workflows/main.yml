@@ -1,0 +1,47 @@
+name: main
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: go test github.com/mac2000/govatar/grav
+  build:
+    needs: [ test ]
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            goos: windows
+            goarch: amd64
+            output: govatar_windows_amd64.exe
+          - os: ubuntu-latest
+            goos: linux
+            goarch: amd64
+            output: govatar_linux_amd64
+          - os: macos-latest
+            goos: darwin
+            goarch: amd64
+            output: govatar_darwin_amd64
+          - os: macos-latest
+            goos: darwin
+            arch: arm64
+            output: govatar_darwin_arm64
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - run: go build -o ${{ matrix.output }}
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+      - name: upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ matrix.output }}
+          path: ${{ matrix.output }}
