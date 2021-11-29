@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<methodCall>
+    <methodName>grav.saveData</methodName>
+    <params>
+        <param>
+            <value>
+                <struct>
+                    <member>
+                        <name>data</name>
+                        <value>
+                            <string>%s</string>
+                        </value>
+                    </member>
+                    <member>
+                        <name>rating</name>
+                        <value>
+                            <int>%v</int>
+                        </value>
+                    </member>
+                    <member>
+                        <name>password</name>
+                        <value>
+                            <string>%s</string>
+                        </value>
+                    </member>
+                </struct>
+            </value>
+        </param>
+    </params>
+</methodCall>

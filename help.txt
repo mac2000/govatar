@@ -1,0 +1,37 @@
+govatar is a console client for gravatar xmlrpc
+
+usage examples:
+
+# grav.exists - check whether a hash has a gravatar
+govatar --username=user@gmail.com --password=123 --exists --email=user@gmail.com
+
+# grav.addresses - get a list of addresses for this account
+govatar --username=user@gmail.com --password=123 --addresses
+
+# grav.userimages - return an array of userimages for this account
+govatar --username=user@gmail.com --password=123 --userimages
+
+# grav.saveData - Save binary image data as a userimage for this account
+# grav.saveUrl - Read an image via its URL and save that as a userimage for this account
+govatar --username=user@gmail.com --password=123 --save --path=/Users/mac/Pictures/avatar.jpg
+govatar --username=user@gmail.com --password=123 --save --url=https://placehold.it/200
+
+# grav.useUserimage - use a userimage as a gravatar for one of more addresses on this account
+govatar --username=user@gmail.com --password=123 --use --id=123456789 --email=user@gmail.com
+
+# grav.removeImage - remove the userimage associated with one or more email addresses
+govatar --username=user@gmail.com --password=123 --remove --email=user@gmail.com
+
+# grav.deleteUserimage - remove a userimage from the account and any email addresses with which it is associated
+govatar --username=user@gmail.com --password=123 --delete --id=123456789
+
+# grav.test - a test function
+govatar --username=user@gmail.com --password=123 --test
+
+other flags:
+
+--json - output json
+
+# all at once, will upload and use new avatar, and remove all old avatars:
+govatar --username=user@gmail.com --password=123 --set --path=/Users/mac/Pictures.jpg
+

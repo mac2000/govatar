@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<methodResponse>
+    <params>
+        <param>
+            <value>
+                <struct>
+                    <member>
+                        <name>5f3da2561611ab7c88eb919b3345d00c</name>
+                        <value>
+                            <int>1</int>
+                        </value>
+                    </member>
+                </struct>
+            </value>
+        </param>
+    </params>
+</methodResponse>
