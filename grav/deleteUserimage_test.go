@@ -5,7 +5,7 @@ import (
 )
 
 func TestDeleteUserImageSuccess(t *testing.T) {
-	ts, g, err := mockGravatar("responses/deleteUserImage.xml")
+	ts, g, err := mockGravatar("responses/deleteUserimage.xml")
 	if err != nil {
 		t.Error(err)
 	}
