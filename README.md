@@ -52,3 +52,13 @@ govatar --username=user@gmail.com --password=123 --use --id=--id=9ad7156f6f7ae64
 ```json
 {"success": true}
 ```
+
+# Binaries
+
+Binaries are available in release section, installation is a simple as downloading and putting them somewhere in a path, e.g.:
+
+```bash
+sudo wget https://github.com/mac2000/govatar/releases/download/1.0.0/govatar_darwin_arm64 -O /usr/local/bin/govatar
+sudo chmod +x /usr/local/bin/govatar
+govatar --username=marchenko.alexandr@gmail.com --password=123 --test
+```
